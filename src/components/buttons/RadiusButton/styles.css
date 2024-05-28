@@ -1,0 +1,18 @@
+.table-button {
+  align-items: center;  
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.table-button:hover {
+  background-color: #ffffff;
+}
+
+.table-button:hover span {
+  color: #000000;
+}
+
+.table-border-button:hover {
+  border: 1px solid #000000;
+}

@@ -1,0 +1,13 @@
+#theme-table-inner-card {
+  bottom: 0.41vw;
+  position: absolute;
+  left: 0.41vw;
+}
+
+#theme-table-wrapper {
+  background-size: 100% 100%;
+  border-radius: 1.25vw;
+  height: 15.62vw;
+  position: relative;
+  width: 25.83vw;
+}

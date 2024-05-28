@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Landing, Profile, Room, Wallet } from "./pages";
+import { Landing } from "./pages/landing";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,20 +15,19 @@ import {
   SolflareWalletAdapter,
   MathWalletAdapter,
   SafePalWalletAdapter,
-  CoinbaseWalletAdapter
+  CoinbaseWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
 
 const App: React.FC = () => {
-
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
-      new SolflareWalletAdapter(),
-      new CloverWalletAdapter(),
-      new MathWalletAdapter(),
-      new SafePalWalletAdapter(),
-      new CoinbaseWalletAdapter()
+      // new SolflareWalletAdapter(),
+      // new CloverWalletAdapter(),
+      // new MathWalletAdapter(),
+      // new SafePalWalletAdapter(),
+      // new CoinbaseWalletAdapter()
     ],
     []
   );
@@ -40,10 +39,7 @@ const App: React.FC = () => {
       <WalletProvider wallets={wallets} autoConnect>
         <Router>
           <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/room" element={<Room />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/wallet" element={<Wallet />} />
+            {/* <Route path="/" element={<Landing />} /> */}
           </Routes>
         </Router>
         <ToastContainer />

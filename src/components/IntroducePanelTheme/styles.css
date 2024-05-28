@@ -1,0 +1,20 @@
+#avatar_container {
+    background-color: #aaaaaa;
+}
+
+#profile_container {
+    background-image: url("/public/assets/images/self_profile_bg.png");
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;    
+}
+
+#profile_data_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;    
+    width: 11.484vw;
+}

@@ -1,0 +1,47 @@
+#lb-full-view-button {
+    background-image: url("/public/assets/images/full_view_button.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+    height: 1.88vw;
+    position: absolute;
+    right: 0;    
+    top: 0;
+    width: 6.59vw;
+}
+
+#lb-main-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+#lb-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+#lb-top-container {            
+    position: relative;
+    width: 100%;
+}
+
+#lb-timeframe-container {
+    left: 21.69vw;
+    position: absolute;
+    bottom: 0;
+}
+
+#lb-title-letter {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+#lb-toprate-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.81vw;
+}

@@ -1,0 +1,61 @@
+.card-inner-img-wrapper {
+    background-image: url('/public/assets/images/quick_play/banner.png');
+    background-size: 100% 100%;
+    border-radius: 1vw;
+    height: 8.85vw;
+    position: absolute;
+    right: 1.66vw;
+    top: 1.66vw;
+    width: 24.58vw;
+}
+
+#quick-card-title {
+    left: 1.633vw;
+    position: absolute;
+    top: 1.633vw;
+    z-index: 3;
+}
+
+.quick-card-wrapper {
+    background: linear-gradient(to right, #131518, #1C1F25);
+    border: 1px solid #636F89;
+    border-radius: 1.25vw;
+    height: 12.18vw;
+    position: relative;
+    width: 52.5vw;        
+}
+
+#quick-property-container {    
+    display: flex;
+    flex-direction: row;    
+    top: 4.68vw;    
+}
+
+.quick-property {
+    @apply h-sp-48 mr-sp-16 w-sp-96;
+}
+
+#quick-play-rand-name-button {
+    @apply absolute bottom-sp-32;
+    background-image: url('/public/assets/randomize_name_buton.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+    height: 1.327vw;
+    left: 10.922vw;
+    width: 7.119vw;
+}
+
+#quick-play-button {
+    background-image: url('/public/assets/quick_play_button.png');
+    background-size: 100% 100%;
+    bottom: 1.633vw;
+    cursor: pointer;
+    height: 1.327vw;
+    left: 18.834vw;
+    position: absolute;
+    width: 5.253vw;
+}
+
+#quick-card-btm-caption {
+    @apply absolute left-sp-32 bottom-sp-32;
+}

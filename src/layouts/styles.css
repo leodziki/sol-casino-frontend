@@ -1,0 +1,77 @@
+.copyright-wrapper {
+  line-height: 1.1vw;
+  width: 42.721vw;
+  text-align: right;
+}
+
+#footer-inner-wrapper {
+  height: 100%;
+  margin: 1.633vw;
+  width: 94.733vw;
+  display: flex;
+  flex-direction: column;
+}
+
+#footer-bottom-container {
+  border-top: 1px solid #3e4552;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1vw;
+  width: 100%;
+}
+
+#footer-top-container {
+  flex-direction: row;
+  display: flex;
+  height: 8.728vw;
+  width: 100%;
+}
+
+.footer-card {
+  height: 5.461vw;
+  line-height: 1.1vw;
+  margin-right: 1.633vw;
+  margin-bottom: 1.633vw;
+  width: 22.458vw;
+}
+
+.footer-card > :first-child {
+  margin-bottom: 0.3vw;
+}
+
+.footer-card.right {
+  text-align: right;
+}
+
+#footer-solana-mark {
+  height: 1.66vw;
+  width: 6.65vw;
+}
+
+.user-info-wrapper {
+  margin-right: 2.016vw;
+  align-items: center;
+}
+
+#user-balance-container {
+  height: 0.56vw;
+  margin-left: 0.83vw;
+  margin-right: 0.4vw;
+  width: 4.28vw;
+}
+
+.user-balance-wrapper {
+  align-items: center;
+  border-radius: 0.62vw;
+  justify-content: space-between;
+  height: 1.66vw;
+  margin-right: 0.83vw;
+  width: 7.29vw;
+}
+
+.small-icon-img {
+  width: 0.83vw;
+  height: 0.83vw;
+  margin-right: 0.83vw;
+}

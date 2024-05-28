@@ -1,0 +1,15 @@
+#two-bar-button {
+    background-image: url('/public/assets/images/events/button_detail.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+    height: 1.88vw;
+    width: 2.45vw;
+}
+
+#four-dot-button {
+    background-image: url('/public/assets/images/events/button_list.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+    height: 1.88vw;
+    width: 2.45vw;
+}

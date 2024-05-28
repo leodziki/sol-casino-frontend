@@ -6,22 +6,21 @@ import {
   CoinListWrapper,
   CoinListHeader,
   CoinListBody
-} from "./styles";
+} from "pages/Wallet/styles";
 
 import { AppLayout } from "../../layouts/AppLayout";
 
 import { Input, Checkbox } from 'antd';
-import { coinList } from "../../layouts/data";
+import { coinList } from "../../layouts/Data";
 
 export const Wallet: React.FC = () => {
-  
+ 
   return (
     <AppLayout>
       <WalletWrapper>
         <TitleWrapper>
           <h4>Wallet</h4>
           <div>
-            {/* eslint-disable jsx-a11y/anchor-is-valid */}
             <a>Find Missing Deposit</a>
             <a>Deposit Withdraw History</a>
           </div>

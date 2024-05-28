@@ -1,0 +1,61 @@
+.table-card-buyin-container {
+    display: flex;
+    flex-direction: column;
+    left: 1.633vw;
+    position: absolute;
+}
+
+.table-card-controller-container {
+    display: flex;
+    flex-direction: row;
+    right: 1.633vw;
+    position: absolute;    
+}
+
+.table-card-name {
+    left: 1.633vw;
+    position: absolute;
+    top: 1.4vw;
+}
+
+.table-card-players-container {
+    display: flex;
+    flex-direction: column;
+    left: 7.35vw;
+    position: absolute;
+}
+
+.table-card-wrapper {
+    background: linear-gradient(to right, #131518 0%, #1c1f25 50%, #131518 100%);
+    border: 1px solid #636F89;
+    border-radius: 0.816vw;    
+    height: 7.094vw;
+    position: relative;
+    width: 25.316vw;    
+}
+
+.table-join-button {
+    width: 4.03vw;    
+    height: 1.32vw;
+}
+
+.table-watch-button {
+    width: 3.31vw;
+    height: 1.32vw;
+}
+
+.table-button {    
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.table-button:hover {
+    background-color: #ffffff;
+    border-radius: 1vw;    
+}
+
+.table-button:hover span {
+    color: #000000;
+}

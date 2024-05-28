@@ -1,0 +1,29 @@
+.event-title-container {    
+    margin-bottom: 3.26vw;
+    position: relative;
+    width: 100%;
+}
+
+.event-title-label {
+    left: 0px;
+    top: 0px;    
+    position: absolute;
+}
+
+#event-title-date {    
+    bottom: 0px;    
+    left: 12.96vw;    
+    position: absolute;
+}
+
+#event-title-controller {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#event-today-container {
+    margin-bottom: 3.26vw;
+}

@@ -1,0 +1,87 @@
+#add_fund {
+    background-image: url("/public/assets/images/add_fund_button.png");
+    background-size: 100% 100%;
+    height: 1.327vw;
+    width: 5.308vw;
+}
+
+#avatar_container {
+    background-color: #aaaaaa;
+    border-radius: 1.225vw;
+    width: 8.677vw;
+    height: 8.677vw;
+    margin-right: 1.633vw;
+}
+
+#balance_container {
+    display: flex;
+    flex-direction: column;
+}
+
+#balance_fund_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#load_more_button {
+    background-image: url("/public/assets/images/load_more_button.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+    height: 1.888vw;    
+    width: 7.673vw;
+    margin-bottom: 3.26vw;
+}
+
+#poker_table_title {
+    position: relative;    
+}
+
+#poker_tables_load_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.poker_tables_container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin-bottom: 1.88vw;
+    width: 100%;    
+}
+
+.poker_tables_container > div:not(:last-child) {
+    margin-right: 1vw;
+}
+
+#profile_container {
+    background-image: url("/public/assets/images/self_profile_bg.png");
+    background-size: 100% 100%;
+    border-radius: 1.225vw;
+    display: flex;
+    flex-direction: row;
+    height: 11.943vw;
+    margin-left: 0.816vw;
+    padding: 1.633vw;
+    position: relative;    
+    width: 25.316vw;
+}
+
+#profile_data_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;    
+    width: 11.484vw;
+}
+
+#quick_profile_container {    
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3.266vw;
+    width: 100%;
+}

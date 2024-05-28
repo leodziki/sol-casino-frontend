@@ -1,0 +1,25 @@
+.tab-component {
+  display: flex;
+  background-color: transparent;
+}
+
+.tab-item {
+  cursor: pointer;
+  color: gray;
+  position: relative;
+}
+
+.tab-item.active {
+  color: white;
+}
+
+.tab-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0.1vw;
+  left: calc(50% - 0.2vw); /* Centring the dot */
+  width: 0.2vw;
+  height: 0.2vw;
+  background-color: white;
+  border-radius: 50%;
+}

@@ -1,0 +1,61 @@
+#profile-main-container {
+  border-radius: 1.22vw;
+  display: flex;
+  flex-direction: column;
+  height: 20.41vw;
+  margin-bottom: 3.26vw;
+  width: 77.38vw;
+}
+
+#profile-banner {
+  background-image: url("/public/assets/images/profile/profile_banner.png");
+  background-size: 100% 100%;
+  border-top-left-radius: 1.22vw;
+  border-top-right-radius: 1.22vw;
+  height: 10.2vw;
+  width: 100%;
+}
+
+#profile-buttons-container {
+    display: flex;
+    flex-direction: row;
+    height: 1.88vw;
+    position: absolute;
+    right: 1.6vw;
+    width: 11vw;
+    top: 1.58vw;
+}
+
+#profile-main-bottom-container {    
+    display: flex;
+    flex-direction: row;
+    height: 5.3vw;
+    left: 0;
+    padding: 0 1.63vw 1.63vw 1.63vw; 
+    position: absolute;
+    width: 100%;
+    top: 4.9vw;
+}
+
+#profile-match-history-title-letter {
+    margin-bottom: 1.63vw;
+}
+
+#profile-match-history-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3.26vw;
+    width: 100%;
+}
+
+#profile-name-pub-container {
+    display: flex;
+    flex-direction: column;
+    height: 2.65vw;
+    left: 11.43vw;
+    position: absolute;
+    width: 19.59vw;
+    top: 0.81vw;
+}

@@ -1,0 +1,24 @@
+#avatar-label-img-container {
+  margin-bottom: 3.26vw;
+}
+
+#setting-title-letter {
+  margin-bottom: 3.26vw;
+}
+
+#avatar-container {
+  border-radius: 1.22vw;
+  height: 9.49vw;
+  width: 37.97vw;
+}
+
+.setting-item-col-space {
+  margin-top: 1.07vw;
+}
+
+#setting-name-input {
+  border-radius: 1.22vw;
+  height: 2.19vw;
+  padding-left: 1.63vw;
+  width: 37.97vw;
+}

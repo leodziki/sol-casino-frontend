@@ -6,42 +6,97 @@ export const headerData = [
   { label: "Contact", to: "#contact" },
 ];
 export const connnectWalletList = [
-  // {
-  //   img: "/assets/images/phantom.svg",
-  //   label: "Phantom",
-  // },
-  // {
-  //   img: "/assets/images/backpack.png",
-  //   label: "Backpack",
-  // },
-  // {
-  //   img: "/assets/images/solflare.svg",
-  //   label: "Solflare",
-  // },
-  // {
-  //   img: "/assets/images/metamask.svg",
-  //   label: "MetaMask",
-  // },
   {
-    img: "/assets/images/walletconnect.svg",
-    label: "WalletConnect",
+    img: "/assets/images/phantom.svg",
+    label: "Phantom",
+    type : "web3"
   },
   {
-    img: "/assets/images/martian.png",
-    label: "Martian",
+    img: "/assets/images/backpack.png",
+    label: "Backpack",
+    type : "web3"
   },
   {
-    img: "/assets/images/nearwallet.svg",
-    label: "Near Wallet",
+    img: "/assets/images/solflare.svg",
+    label: "Solflare",
+    type : "web3"
   },
   {
-    img: "/assets/images/google.svg",
-    label: "Google",
+    img: "/assets/images/metamask.svg",
+    label: "MetaMask",
+    type : "web3"
+  },
+  // {
+  //   img: "/assets/images/walletconnect.svg",
+  //   label: "WalletConnect",
+  //   type : "web3"
+  // },
+  // {
+  //   img: "/assets/images/martian.png",
+  //   label: "Martian",
+  // },
+  // {
+  //   img: "/assets/images/nearwallet.svg",
+  //   label: "Near Wallet",
+  // },
+  // {
+  //   img: "/assets/images/google.svg",
+  //   label: "Google",
+  //   type : "web3"  
+  // },
+  // {
+  //   img: "/assets/images/email.svg",
+  //   label: "Sign up with email",
+  //   type : "web3"
+  // }
+]
+export const userTblData = [
+  {
+    name: 'Alex John',
+    email: 'alexjohn@gmail.com',
+    avatar: '-',
+    num: '29',
+    createdat: '2022-02-02',
+    updatedat: '2022-02-02',
+    credit: '-'
   },
   {
-    img: "/assets/images/email.svg",
-    label: "Sign up with email",
-  }
+    name: 'Alex John',
+    email: 'alexjohn@gmail.com',
+    avatar: '-',
+    num: '29',
+    createdat: '2022-02-02',
+    updatedat: '2022-02-02',
+    credit: '-'
+  },
+  {
+    name: 'Alex John',
+    email: 'alexjohn@gmail.com',
+    avatar: '-',
+    num: '29',
+    createdat: '2022-02-02',
+    updatedat: '2022-02-02',
+    credit: '-'
+  },
+  {
+    name: 'Alex John',
+    email: 'alexjohn@gmail.com',
+    avatar: '-',
+    num: '29',
+    createdat: '2022-02-02',
+    updatedat: '2022-02-02',
+    credit: '-'
+  },
+  {
+    name: 'Alex John',
+    email: 'alexjohn@gmail.com',
+    avatar: '-',
+    num: '29',
+    createdat: '2022-02-02',
+    updatedat: '2022-02-02',
+    credit: '-'
+  },
+  
 ]
 export const roomTableData = [
   {

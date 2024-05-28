@@ -1,3 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 @font-face {
   font-family: "filson-soft";
   src: url("fonts/filson-soft.ttf") format("truetype");
@@ -11,15 +15,9 @@ html {
 }
 
 body {
-  margin: 0;
-  background: #121724;
-  font-family: -apple-system, BlinkMacSystemFont, "Anton", "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  /* filson-soft,Segoe UI,Helvetica,sans-serif */
+  font-family: 'Instagram Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 15px;
 }
 
 * {

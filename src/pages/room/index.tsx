@@ -1,97 +1,189 @@
-import React, { useState } from "react";
-import {
-  RoomWrapper,
-  RoomHeader,
-  RoomHeaderSection,
-  LeaderBoardBtn,
-  TabsContainer,
-  RoomTitle
-} from "./styles";
-
-import { Switch, Tabs  } from 'antd';
-import { QuickSeat, CashGames, SpinGo } from "../../modules/roomtabs"; 
-
-// import react-icons
-import { MdSettings, MdHelp, MdHeadsetMic, MdOutlineWbSunny  } from "react-icons/md";
-import { LuMoon } from "react-icons/lu";
+import React, { useContext, useEffect, useState } from "react";
 import { RiBarChartHorizontalFill } from "react-icons/ri";
+import { Button } from "antd";
+import { CloseCircleOutlined } from "@ant-design/icons";
 
-import { AppLayout } from "../../layouts/AppLayout";
+import gameContext from "context/game/gameContext";
+import globalContext from "context/global/globalContext";
+import Footer from "components/game/Footer";
+import { Lobby } from "modules/roomtabs";
+import { Play } from "modules/games/Play";
+import { StyledTabs } from "pages/Room/styles";
+
+interface roomType {
+  id: string;
+  role: number;
+  roomTitle: string;
+}
 
 export const Room: React.FC = () => {
-  // @typescript-eslint/no-unused-vars
-  const [ headerItem, setHeaderItem ] = useState([
-    {
-      icon: <MdSettings size={20}/>,
-      label: "Preferences"
-    },
-    {
-      icon: <MdHelp size={20} />,
-      label: "Help"
-    },
-    {
-      icon: <MdHeadsetMic size={20} />,
-      label: "Online Support"
-    },
-  ]);
-  const [ tabList, setTabList ] = useState([
-    {
-      label: "Poker",
-      component: <QuickSeat />
-    },
-    {
-      label: "Turbo poker",
-      component: <CashGames />
-    },
-    {
-      label: "Turbo H2H",
-      component: <SpinGo />
-    }
-  ])
-  return (
-    <AppLayout>
-      <RoomWrapper>
-        <RoomTitle>
-          <RiBarChartHorizontalFill />
-          LOBBY
-        </RoomTitle>
-        <RoomHeader>
-          <img src="/assets/images/room-logo.png" alt="" draggable="false" />
-          <RoomHeaderSection>
-            <div className="room-header-setting">
-              {
-                headerItem.map((item) => 
-                  <p>
-                    {item.icon}
-                    <span>{item.label}</span>
-                  </p>
-                )
+  const [activeTabKey, setActiveTabKey] = useState("1");
+  const [roomList, setRoomList] = useState<roomType[]>([]);
+  const {
+    currentTables,
+    leaveTable,
+    setBet,
+    setCurrentTable,
+    setIsPlayerSeated,
+    setSeatId,
+    setMessages,
+    setTurn,
+    setOperationMessage,
+    tableParameters,
+  } = useContext(gameContext);
+  const { isTabUpdated, setIsTabUpdated, isLogoutTriggered } =
+    useContext(globalContext);
+  const token = localStorage.token;
+
+  const removeRoom = (roomId: string, userRole: number): void => {
+    leaveTable(roomId, userRole);
+    const modifiedRoomList = roomList.filter((room) => room.id !== roomId);
+    setRoomList(modifiedRoomList);
+    setActiveTabKey(modifiedRoomList[modifiedRoomList.length - 1]?.id);
+  };
+
+  useEffect(() => {
+    const getRoomList = () => {
+      console.log("get Room List 1");
+      setIsTabUpdated(false); //for next time
+      try {
+        fetch("/api/tables/getTableListbyUser", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-auth-token": token,
+          },
+        }).then((response) => {
+          if (response.ok) {
+            response.json().then((data) => {
+              // console.log(
+              //   "get room list data request is successful." +
+              //     JSON.stringify(data, null, 2)
+              // );
+              if (data && data.resultFlag) {
+                // console.log(
+                //   "success to get room list",
+                //   JSON.stringify(data.roomList)
+                // );
+                setRoomList(data.roomList);
+                // console.log(
+                //   "activeKey:",
+                //   data.roomList[data.roomList.length - 1]?.id
+                // );
+                setActiveTabKey(data.roomList[data.roomList.length - 1]?.id);
+              } else {
+                console.log("data is not correct.");
               }
-            </div>
-            <div className="room-header-leaderboard">
-                <LeaderBoardBtn>LEADERBOARD</LeaderBoardBtn>
-                <Switch
-                  checkedChildren={<LuMoon />}
-                  unCheckedChildren={<MdOutlineWbSunny  />}
-                  defaultChecked
-                />
-            </div>
-          </RoomHeaderSection>
-        </RoomHeader>
-        <TabsContainer>
-          <Tabs
-            type="card"
-            items={tabList.map((item, i) => {
-              const id = String(i + 1);
-              return {
-                label: item.label,
-                key: id,
-                children: item.component,
-              };
-            })}
-          />
-        </TabsContainer>
-      </RoomWrapper>
-    </AppLayout>
+            });
+          } else {
+            console.log(
+              "get room list request failed with status " + response.status
+            );
+          }
+        });
+      } catch (error: any) {
+        console.log("get room list request error");
+      }
+    };
+
+    getRoomList();
+  }, [isTabUpdated]);
+
+  useEffect(() => {
+    try {
+      if (isLogoutTriggered === true && roomList) {
+        roomList.forEach((room) => {
+          removeRoom(room.id, room.role);
+        });
+      }
+    } catch (error: any) {
+      console.log("room : While remove all room tabs, Error:", error);
+    }
+  }, [isLogoutTriggered]);
+
+  useEffect(() => {
+    try {
+      if (activeTabKey !== "1") {
+        console.log("active table id:", activeTabKey);
+        console.log("active: tables:", currentTables);
+        setCurrentTable(
+          currentTables.find((table: any) => table._id === activeTabKey)
+        );
+
+        if (tableParameters && tableParameters[activeTabKey] !== undefined) {
+          setIsPlayerSeated(tableParameters[activeTabKey].isPlayerSeated);
+          setSeatId(tableParameters[activeTabKey].seatId);
+          setBet(tableParameters[activeTabKey].bet);
+          setMessages(tableParameters[activeTabKey].messages);
+          setTurn(tableParameters[activeTabKey].turn);
+          setOperationMessage(tableParameters[activeTabKey].operationMessage);
+        }
+      }
+    } catch (error: any) {
+      console.log("room: active tab changed: error:", error);
+    }
+  }, [activeTabKey, currentTables, tableParameters]);
+
+  return (
+    <div className="font-instagram">
+      {roomList.map((room, index) => (
+        (room?.id && room?.role) ? <Play roomId={room?.id} userRole={room.role} /> : <></>
+      ))}
+    </div>
   );
+  // return (
+  //   // <StyledTabs
+  //   //   activeKey={activeTabKey}
+  //   //   onChange={(key) => setActiveTabKey(key)}
+  //   // >
+  //     {/* <StyledTabs.TabPane
+  //       tab={
+  //         <span style={{ display: "flex", alignItems: "center" }}>
+  //           <RiBarChartHorizontalFill />
+  //           <span>{"Lobby"}</span>
+  //         </span>
+  //       }
+  //       key="1"
+  //     >
+  //       <Lobby />
+  //     </StyledTabs.TabPane> */}
+  //     <div>
+  //     {roomList.map((room) => (
+  //       // <StyledTabs.TabPane
+  //       //   tab={
+  //       //     <div style={{ position: "relative", width: "100%" }}>
+  //       //       <span>
+  //       //         {room.roomTitle.length > 40
+  //       //           ? room.roomTitle.substring(0, 40) + "..."
+  //       //           : room.roomTitle}
+  //       //       </span>
+  //       //       <Button
+  //       //         type="text"
+  //       //         style={{
+  //       //           position: "absolute",
+  //       //           right: "0%",
+  //       //           top: "50%",
+  //       //           transform: "translateY(-50%)",
+  //       //         }}
+  //       //         icon={<CloseCircleOutlined />}
+  //       //         onClick={(event) => {
+  //       //           event.stopPropagation();
+  //       //           removeRoom(room?.id, room.role);
+  //       //         }}
+  //       //       />
+  //       //     </div>
+  //       //   }
+  //       //   key={room?.id}
+  //       // >
+  //         {room?.id && room?.role && (
+  //           <>
+  //             <Play roomId={room?.id} userRole={room.role} />
+  //             {/* {room.role === 1 && <Footer roomId={room?.id} />} */}
+  //           </>
+  //         )}
+  //       {/* </StyledTabs.TabPane> */}
+  //     ))}
+  //     </div>
+  //   // // </StyledTabs>
+  // );
 };

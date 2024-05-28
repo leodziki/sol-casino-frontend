@@ -1,19 +1,18 @@
 import React from "react";
-import { AppContentWrapper, AppLayoutWrapper, Content } from "./styles";
+import { AppLayoutWrapper, Content } from "./styles";
 import { Header } from "./Header";
-import { AppSidebar } from "./AppSidebar";
+import { Footer } from "./Footer";
 
 export const AppLayout: React.FC<React.HTMLAttributes<HTMLElement>> = ({
   children,
-}) => {
-
-  return (
+}) => {  
+  return (    
     <AppLayoutWrapper>
-      <Header/>
-      <Content>
-        <AppSidebar />
-        <AppContentWrapper>{children}</AppContentWrapper>
+      <Header />
+      <Content>        
+        {children}
       </Content>
+      <Footer />
     </AppLayoutWrapper>
   );
 };
