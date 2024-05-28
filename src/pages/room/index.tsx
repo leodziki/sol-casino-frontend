@@ -8,7 +8,7 @@ import globalContext from "context/global/globalContext";
 import Footer from "components/game/Footer";
 import { Lobby } from "modules/roomtabs";
 import { Play } from "modules/games/Play";
-import { StyledTabs } from "pages/Room/styles";
+import { StyledTabs } from "pages/room/styles";
 
 interface roomType {
   id: string;

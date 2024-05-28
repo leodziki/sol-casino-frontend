@@ -39,7 +39,7 @@ const App: React.FC = () => {
       <WalletProvider wallets={wallets} autoConnect>
         <Router>
           <Routes>
-            {/* <Route path="/" element={<Landing />} /> */}
+            <Route path="/" element={<Landing />} />
           </Routes>
         </Router>
         <ToastContainer />

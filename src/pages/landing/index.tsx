@@ -6,13 +6,13 @@ import { DashBoard } from "pages/DashBoard";
 import { EventBoard } from "pages/EventBoard";
 import { Leaderboard } from "pages/Leaderboard";
 import { PlayBoard } from "pages/PlayBoard";
-import { Profile } from "pages/Profile";
+import { Profile } from "pages/profile";
 import { RulesBoard } from "pages/RulesBoard";
-import { Room } from "pages/Room";
+import { Room } from "pages/room";
 import { Settings } from "pages/Settings"; 
 
 import { AppLayout } from "layouts/AppLayout";
-import { LandingPageWrapper } from "pages/Landing/styles";
+import { LandingPageWrapper } from "pages/landing/styles";
 
 export const Landing: React.FC = () => {
   const [selectedMenuKey, setSelectedMenuKey] = useState("0");  

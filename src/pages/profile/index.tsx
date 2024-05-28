@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import globalContext from "context/global/globalContext";
 import ColoredText from "components/Typography/ColoredText";
-import "pages/Profile/styles.css";
+import "pages/profile/styles.css";
 import RadiusButton from "components/buttons/RadiusButton";
 
 interface ProfileItemProps {

@@ -6,12 +6,12 @@ import {
   CoinListWrapper,
   CoinListHeader,
   CoinListBody
-} from "pages/Wallet/styles";
+} from "pages/wallet/styles";
 
 import { AppLayout } from "../../layouts/AppLayout";
 
 import { Input, Checkbox } from 'antd';
-import { coinList } from "../../layouts/Data";
+import { coinList } from "../../layouts/data";
 
 export const Wallet: React.FC = () => {
  
